@@ -36,6 +36,8 @@ app.use("/", (req, res) => {
 app.use("/uploads", express.static("uploads"));
 
 app.use("/api/farmers", farmerRoutes);
+const farmerQrRoutes = require('./modules/farmer-qr/FarmerQRRoutes');
+app.use('/api/farmer/qr', farmerQrRoutes);
 
 app.use(logger);
 app.use(errorHandler);
